@@ -1,2 +1,2 @@
 # GayJam
-![](https://github.com/FoundFun/GayJam/blob/main/billy-herrington-dotman4.gif)
+![](https://github.com/FoundFun/GayJam/tree/master/billy-herrington-dotman4.gif)
