@@ -1,4 +1,4 @@
-namespace GlobalComplexity
+namespace GlobalComplication
 {
     public enum Complication
     {
