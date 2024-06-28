@@ -1,4 +1,4 @@
-namespace GlobalComplication
+namespace GlobalComponents
 {
     public enum Complication
     {
