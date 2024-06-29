@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad1899bdc23943f1a14af67f78dcfa9c, type: 3}
+  m_Name: PressConfig
+  m_EditorClassIdentifier: 
+  <TimerDurationDay1>k__BackingField: 10
+  <TimerDurationDay2>k__BackingField: 12
+  <TimerDurationDay3>k__BackingField: 14
+  <TimerDurationDay4>k__BackingField: 16
+  <TimerDurationDay5>k__BackingField: 18
+  <TimerDurationDay6>k__BackingField: 20
+  <TimerDurationDay7>k__BackingField: 25

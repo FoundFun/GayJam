@@ -135,6 +135,24 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PressLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""ca6cb7ea-550d-42da-8bbd-6ef194401060"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PressRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""1acaabba-0b06-419f-b7d0-893234b27c08"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -553,6 +571,28 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""BenchPress"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7fdafb18-1812-4e70-9a6d-30537ab5cfc6"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PressLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c7855063-7705-41e4-a8bf-599e5162866d"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PressRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1152,6 +1192,8 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_SelectMiniGame = m_Player.FindAction("SelectMiniGame", throwIfNotFound: true);
         m_Player_PullUp = m_Player.FindAction("PullUp", throwIfNotFound: true);
         m_Player_BenchPress = m_Player.FindAction("BenchPress", throwIfNotFound: true);
+        m_Player_PressLeft = m_Player.FindAction("PressLeft", throwIfNotFound: true);
+        m_Player_PressRight = m_Player.FindAction("PressRight", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1243,6 +1285,8 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_SelectMiniGame;
     private readonly InputAction m_Player_PullUp;
     private readonly InputAction m_Player_BenchPress;
+    private readonly InputAction m_Player_PressLeft;
+    private readonly InputAction m_Player_PressRight;
     public struct PlayerActions
     {
         private @InputSystem_Actions m_Wrapper;
@@ -1259,6 +1303,8 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         public InputAction @SelectMiniGame => m_Wrapper.m_Player_SelectMiniGame;
         public InputAction @PullUp => m_Wrapper.m_Player_PullUp;
         public InputAction @BenchPress => m_Wrapper.m_Player_BenchPress;
+        public InputAction @PressLeft => m_Wrapper.m_Player_PressLeft;
+        public InputAction @PressRight => m_Wrapper.m_Player_PressRight;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1304,6 +1350,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @BenchPress.started += instance.OnBenchPress;
             @BenchPress.performed += instance.OnBenchPress;
             @BenchPress.canceled += instance.OnBenchPress;
+            @PressLeft.started += instance.OnPressLeft;
+            @PressLeft.performed += instance.OnPressLeft;
+            @PressLeft.canceled += instance.OnPressLeft;
+            @PressRight.started += instance.OnPressRight;
+            @PressRight.performed += instance.OnPressRight;
+            @PressRight.canceled += instance.OnPressRight;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -1344,6 +1396,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @BenchPress.started -= instance.OnBenchPress;
             @BenchPress.performed -= instance.OnBenchPress;
             @BenchPress.canceled -= instance.OnBenchPress;
+            @PressLeft.started -= instance.OnPressLeft;
+            @PressLeft.performed -= instance.OnPressLeft;
+            @PressLeft.canceled -= instance.OnPressLeft;
+            @PressRight.started -= instance.OnPressRight;
+            @PressRight.performed -= instance.OnPressRight;
+            @PressRight.canceled -= instance.OnPressRight;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1538,6 +1596,8 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         void OnSelectMiniGame(InputAction.CallbackContext context);
         void OnPullUp(InputAction.CallbackContext context);
         void OnBenchPress(InputAction.CallbackContext context);
+        void OnPressLeft(InputAction.CallbackContext context);
+        void OnPressRight(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

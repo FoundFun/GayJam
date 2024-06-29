@@ -290,10 +290,6 @@ PrefabInstance:
       propertyPath: _playerMover
       value: 
       objectReference: {fileID: 2380442321238110563}
-    - target: {fileID: 391278279777878491, guid: 6b3dfa53ae3f9874db661d7f3b8b74ef, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 784215120191531287, guid: 6b3dfa53ae3f9874db661d7f3b8b74ef, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -334,14 +330,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4155956835677852746, guid: 6b3dfa53ae3f9874db661d7f3b8b74ef, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 2380442321238110563}
     - target: {fileID: 7884235099057567972, guid: 6b3dfa53ae3f9874db661d7f3b8b74ef, type: 3}
       propertyPath: m_Name
       value: Gym
       objectReference: {fileID: 0}
-    - target: {fileID: 9216185907064345268, guid: 6b3dfa53ae3f9874db661d7f3b8b74ef, type: 3}
-      propertyPath: _playerMover
-      value: 
-      objectReference: {fileID: 2380442321238110563}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

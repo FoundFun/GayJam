@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using GlobalComponents;
 using Mini_Games.PullUp;
 using Player;
 using TMPro;
@@ -55,8 +56,34 @@ namespace Mini_Games.BenchPress
                 pressBar.gameObject.SetActive(false);
             }
 
-            _count++;
-            _bars[_count].gameObject.SetActive(true);
+            if (_count < _bars.Count - 1)
+            {
+                _count++;
+                _bars[_count].gameObject.SetActive(true);
+            }
+            else
+            {
+                //todo result
+                StartCoroutine(EndMiniGame());
+            }
+            
+        }
+        
+        private void Reset()
+        {
+            Score.BenchPressScore = 0;
+            PlayerPrefs.Save();
+        }
+        
+        private IEnumerator EndMiniGame()
+        {
+            Debug.Log($"ОЧКИ: {Score.PullUpsScore}");
+            
+            //todo Add ScreenScore
+
+            yield return new WaitForSeconds(1);
+            
+            gameObject.SetActive(false);
         }
     }
 }
