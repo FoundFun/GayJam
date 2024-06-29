@@ -50,7 +50,7 @@ public class PullUpGameManager : MonoBehaviour
 
     void EndMiniGame()
     {
-        Debug.Log($"ОЧКИ: {_currentPoints}");
+        Debug.Log($"МУСКУЛ: {_currentPoints}");
         //TODO Закрыть экран
     }
 }
