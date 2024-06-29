@@ -2,6 +2,7 @@ using DG.Tweening;
 using GlobalComponents;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Action = System.Action;
 
 namespace Mini_Games.BenchPress
 {
@@ -15,6 +16,8 @@ namespace Mini_Games.BenchPress
 
         private InputSystem_Actions _inputSystemActions;
         private Tweener _tweener;
+
+        public event Action NextBar;
 
         private void Awake()
         {
@@ -51,6 +54,8 @@ namespace Mini_Games.BenchPress
                 if (overlapBox.TryGetComponent(out BarType barType))
                 {
                     Score.BenchPressScore += barType.Score;
+                    OnDisable();
+                    NextBar?.Invoke();
                     Debug.Log(barType.Score);
                 }
             }
