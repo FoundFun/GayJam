@@ -1,56 +1,128 @@
+using System;
+using System.Collections;
+using GlobalComponents;
+using Player;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public class PullUpGameManager : MonoBehaviour
+namespace Mini_Games.PullUp
 {
-    [SerializeField] private TMP_Text _points;
-    [SerializeField] private TMP_Text _timer;
-    [SerializeField] private PullUpConfig _config;
-
-    private int _currentPoints = 0;
-    private float _remainingTime;
-
-    void Start()
+    public class PullUpGameManager : MonoBehaviour
     {
-        _remainingTime = _config.TimerDuration;
+        [SerializeField] private TMP_Text _points;
+        [SerializeField] private TMP_Text _timer;
+        [SerializeField] private PullUpConfig _config;
+        [SerializeField] private PlayerMover _playerMover;
 
-        UpdatePoints();
-        UpdateRemainingTime();
-    }
+        private InputSystem_Actions _inputSystemActions;
+        private int _currentPoints;
+        private float _remainingTime;
+        private bool _isStopGame;
 
-    void Update()
-    {
-        _remainingTime -= Time.deltaTime;
+        private void Awake()
+        {
+            _inputSystemActions = new InputSystem_Actions();
+        }
 
-        UpdateRemainingTime();
+        private void OnEnable()
+        {
+            Reset();
+            
+            _playerMover.gameObject.SetActive(false);
+            
+            switch ((Complication)Score.CurrentDay)
+            {
+                case Complication.Day1:
+                    _remainingTime = _config.TimerDurationDay1;
+                    break;
+                case Complication.Day2:
+                    _remainingTime = _config.TimerDurationDay2;
+                    break;
+                case Complication.Day3:
+                    _remainingTime = _config.TimerDurationDay3;
+                    break;
+                case Complication.Day4:
+                    _remainingTime = _config.TimerDurationDay4;
+                    break;
+                case Complication.Day5:
+                    _remainingTime = _config.TimerDurationDay5;
+                    break;
+                case Complication.Day6:
+                    _remainingTime = _config.TimerDurationDay6;
+                    break;
+                case Complication.Day7:
+                    _remainingTime = _config.TimerDurationDay7;
+                    break;
+            }
 
-        if (_remainingTime <= 0)
-            EndMiniGame();
+            UpdatePoints();
+            UpdateRemainingTime();
+            
+            _inputSystemActions.Enable();
+            _inputSystemActions.Player.PullUp.canceled += OnPullUp;
+        }
 
-        if (Input.GetKeyDown(KeyCode.Space)) //TODO ÔÂÂ·ËÚ¸ Ì‡ input system€
-            OnPullUpButtonClicked();
-    }
+        private void OnDisable()
+        {
+            _playerMover.gameObject.SetActive(true);
+            
+            _inputSystemActions.Player.PullUp.canceled -= OnPullUp;
+            _inputSystemActions.Disable();
+        }
 
-    public void OnPullUpButtonClicked()
-    {
-        _currentPoints++;
-        UpdatePoints();
-    }
+        private void OnPullUp(InputAction.CallbackContext obj)
+        {
+            _currentPoints++;
+            UpdatePoints();
+        }
 
-    public void UpdatePoints()
-    {
-        _points.text = $"Ã”— ”À: {_currentPoints}";
-    }
+        private void Update()
+        {
+            _remainingTime -= Time.deltaTime;
 
-    public void UpdateRemainingTime()
-    {
-        if (_remainingTime > 0)
-            _timer.text = $"¬ÂÏˇ:  {Mathf.Round(_remainingTime)}";
-    }
+            UpdateRemainingTime();
 
-    void EndMiniGame()
-    {
-        Debug.Log($"Œ◊ »: {_currentPoints}");
-        //TODO «‡Í˚Ú¸ ˝Í‡Ì
+            if (_remainingTime <= 0 && !_isStopGame)
+                StartCoroutine(EndMiniGame());
+        }
+
+        private void Reset()
+        {
+            _currentPoints = 0;
+            _remainingTime = 0;
+            _isStopGame = false;
+        }
+
+        private void UpdatePoints()
+        {
+            _points.text = $"–ú–£–°–ö–£–õ: {_currentPoints}";
+        }
+
+        private void UpdateRemainingTime()
+        {
+            if (_remainingTime > 0)
+                _timer.text = $"–í—Ä–µ–º—è:  {Mathf.Round(_remainingTime)}";
+        }
+
+        private IEnumerator EndMiniGame()
+        {
+            Stop();
+            
+            Debug.Log($"–û–ß–ö–ò: {_currentPoints}");
+            
+            //todo Add ScreenScore
+
+            yield return new WaitForSeconds(1);
+            
+            gameObject.SetActive(false);
+        }
+
+        private void Stop()
+        {
+            _isStopGame = true;
+            _inputSystemActions.Player.PullUp.canceled -= OnPullUp;
+            _inputSystemActions.Disable();
+        }
     }
 }

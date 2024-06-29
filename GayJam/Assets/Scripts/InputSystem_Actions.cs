@@ -117,6 +117,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PullUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""aa669844-741a-45e0-a642-36f56c888731"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -513,6 +522,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""SelectMiniGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""52e83db3-a950-4891-aec9-fbde6bb36e28"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PullUp"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1110,6 +1130,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Player_Next = m_Player.FindAction("Next", throwIfNotFound: true);
         m_Player_Sprint = m_Player.FindAction("Sprint", throwIfNotFound: true);
         m_Player_SelectMiniGame = m_Player.FindAction("SelectMiniGame", throwIfNotFound: true);
+        m_Player_PullUp = m_Player.FindAction("PullUp", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1199,6 +1220,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Next;
     private readonly InputAction m_Player_Sprint;
     private readonly InputAction m_Player_SelectMiniGame;
+    private readonly InputAction m_Player_PullUp;
     public struct PlayerActions
     {
         private @InputSystem_Actions m_Wrapper;
@@ -1213,6 +1235,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         public InputAction @Next => m_Wrapper.m_Player_Next;
         public InputAction @Sprint => m_Wrapper.m_Player_Sprint;
         public InputAction @SelectMiniGame => m_Wrapper.m_Player_SelectMiniGame;
+        public InputAction @PullUp => m_Wrapper.m_Player_PullUp;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1252,6 +1275,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @SelectMiniGame.started += instance.OnSelectMiniGame;
             @SelectMiniGame.performed += instance.OnSelectMiniGame;
             @SelectMiniGame.canceled += instance.OnSelectMiniGame;
+            @PullUp.started += instance.OnPullUp;
+            @PullUp.performed += instance.OnPullUp;
+            @PullUp.canceled += instance.OnPullUp;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -1286,6 +1312,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @SelectMiniGame.started -= instance.OnSelectMiniGame;
             @SelectMiniGame.performed -= instance.OnSelectMiniGame;
             @SelectMiniGame.canceled -= instance.OnSelectMiniGame;
+            @PullUp.started -= instance.OnPullUp;
+            @PullUp.performed -= instance.OnPullUp;
+            @PullUp.canceled -= instance.OnPullUp;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1478,6 +1507,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         void OnNext(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);
         void OnSelectMiniGame(InputAction.CallbackContext context);
+        void OnPullUp(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

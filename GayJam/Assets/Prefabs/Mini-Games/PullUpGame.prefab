@@ -528,7 +528,6 @@ GameObject:
   - component: {fileID: 6827565837424555093}
   - component: {fileID: 3930951386779851004}
   - component: {fileID: 6007129004286451938}
-  - component: {fileID: 5655473548599142001}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -622,21 +621,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &5655473548599142001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2947259524684181414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c762fe44627881b4dbc2e3b0fda1375c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _points: {fileID: 2877389155467639873}
-  _timer: {fileID: 4800638767515358001}
-  _config: {fileID: 11400000, guid: 074d2f4dde566d44fadd41e3fd16dc06, type: 2}
 --- !u!1 &4081035724705011601
 GameObject:
   m_ObjectHideFlags: 0
@@ -1126,13 +1110,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6045405482640429081}
+  - component: {fileID: 2550798336534378519}
   m_Layer: 0
   m_Name: PullUpGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6045405482640429081
 Transform:
   m_ObjectHideFlags: 0
@@ -1151,6 +1136,21 @@ Transform:
   - {fileID: 2770435813893152703}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2550798336534378519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6841936676814289932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c762fe44627881b4dbc2e3b0fda1375c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _points: {fileID: 2877389155467639873}
+  _timer: {fileID: 4800638767515358001}
+  _config: {fileID: 11400000, guid: 074d2f4dde566d44fadd41e3fd16dc06, type: 2}
 --- !u!1 &7624940497956899210
 GameObject:
   m_ObjectHideFlags: 0

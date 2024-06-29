@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a5c4a1f693cdb046afa12b7f93292fb, type: 3}
   m_Name: PullUpConfig
   m_EditorClassIdentifier: 
-  <TimerDuration>k__BackingField: 60.9
+  <TimerDuration>k__BackingField: 10

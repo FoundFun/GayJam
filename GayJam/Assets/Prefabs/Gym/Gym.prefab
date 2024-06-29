@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 3652612965808373237}
   - component: {fileID: 3840868676995593354}
   - component: {fileID: 3913890439598486450}
+  - component: {fileID: 7199312144723633165}
   m_Layer: 6
   m_Name: Pullup
   m_TagString: Untagged
@@ -268,6 +269,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &7199312144723633165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4995918489973401008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb32dc7d18ac40e3beed84a633df6edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _miniGame: {fileID: 8727965718171940892}
 --- !u!1 &5596294106768400581
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,5 +671,73 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1598642314455873267}
+  - {fileID: 8361249342155969545}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2876823502404944912
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 784215120191531287}
+    m_Modifications:
+    - target: {fileID: 6045405482640429081, guid: 77c405bb6462d8c419e1d6b941ad2de5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 599.87994
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045405482640429081, guid: 77c405bb6462d8c419e1d6b941ad2de5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1107.9392
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045405482640429081, guid: 77c405bb6462d8c419e1d6b941ad2de5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.4400864
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045405482640429081, guid: 77c405bb6462d8c419e1d6b941ad2de5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045405482640429081, guid: 77c405bb6462d8c419e1d6b941ad2de5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045405482640429081, guid: 77c405bb6462d8c419e1d6b941ad2de5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045405482640429081, guid: 77c405bb6462d8c419e1d6b941ad2de5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045405482640429081, guid: 77c405bb6462d8c419e1d6b941ad2de5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045405482640429081, guid: 77c405bb6462d8c419e1d6b941ad2de5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045405482640429081, guid: 77c405bb6462d8c419e1d6b941ad2de5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6841936676814289932, guid: 77c405bb6462d8c419e1d6b941ad2de5, type: 3}
+      propertyPath: m_Name
+      value: PullUpGame
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 77c405bb6462d8c419e1d6b941ad2de5, type: 3}
+--- !u!4 &8361249342155969545 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6045405482640429081, guid: 77c405bb6462d8c419e1d6b941ad2de5, type: 3}
+  m_PrefabInstance: {fileID: 2876823502404944912}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8727965718171940892 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6841936676814289932, guid: 77c405bb6462d8c419e1d6b941ad2de5, type: 3}
+  m_PrefabInstance: {fileID: 2876823502404944912}
+  m_PrefabAsset: {fileID: 0}

@@ -4,12 +4,19 @@ namespace GlobalComponents
 {
     public static class Score
     {
+        private const string CurrentDayKey = "CurrentDay";
         private const string BestScoreKey = "BestScore";
         private const string CurrentScoreKey = "CurrentScore";
         private const string BenchPressScoreKey = "BenchPressScore";
         private const string PressScoreKey = "PressScore";
         private const string PullUpsScoreKey = "PullUpsScore";
         private const string RunScoreKey = "RunScore";
+
+        public static int CurrentDay
+        {
+            get => PlayerPrefs.GetInt(CurrentDayKey);
+            set => PlayerPrefs.SetInt(CurrentDayKey, value);
+        }
 
         public static int BestScore
         {

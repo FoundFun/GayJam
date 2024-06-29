@@ -1,3 +1,4 @@
+using Mini_Games;
 using Player.Configs;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -30,9 +31,13 @@ namespace Player
         
         private void OnSelected(InputAction.CallbackContext obj)
         {
-            if (Physics2D.OverlapCircle(transform.position, _playerConfig.RadiusSelect, _layerMiniGame))
+            Collider2D overlapCircle = Physics2D.OverlapCircle(transform.position, _playerConfig.RadiusSelect, _layerMiniGame);
+            if (overlapCircle != null)
             {
-                //todo start mini game
+                if (overlapCircle.gameObject.TryGetComponent(out MiniGame miniGame))
+                {
+                    miniGame.StartMiniGame();
+                }
             }
         }
     }
