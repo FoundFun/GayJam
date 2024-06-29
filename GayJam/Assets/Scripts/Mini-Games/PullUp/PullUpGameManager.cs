@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using GlobalComponents;
 using Player;
@@ -16,7 +15,6 @@ namespace Mini_Games.PullUp
         [SerializeField] private PlayerMover _playerMover;
 
         private InputSystem_Actions _inputSystemActions;
-        private int _currentPoints;
         private float _remainingTime;
         private bool _isStopGame;
 
@@ -73,7 +71,8 @@ namespace Mini_Games.PullUp
 
         private void OnPullUp(InputAction.CallbackContext obj)
         {
-            _currentPoints++;
+            Score.PullUpsScore++;
+            PlayerPrefs.Save();
             UpdatePoints();
         }
 
@@ -89,14 +88,15 @@ namespace Mini_Games.PullUp
 
         private void Reset()
         {
-            _currentPoints = 0;
+            Score.PullUpsScore = 0;
+            PlayerPrefs.Save();
             _remainingTime = 0;
             _isStopGame = false;
         }
 
         private void UpdatePoints()
         {
-            _points.text = $"МУСКУЛ: {_currentPoints}";
+            _points.text = $"МУСКУЛ: {Score.PullUpsScore}";
         }
 
         private void UpdateRemainingTime()
@@ -109,7 +109,7 @@ namespace Mini_Games.PullUp
         {
             Stop();
             
-            Debug.Log($"ОЧКИ: {_currentPoints}");
+            Debug.Log($"ОЧКИ: {Score.PullUpsScore}");
             
             //todo Add ScreenScore
 
