@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2793676402933396916}
   - component: {fileID: 3822357613335839740}
   - component: {fileID: 7791645487619974575}
+  - component: {fileID: 6817596581902027294}
   m_Layer: 6
   m_Name: 'BenchPress '
   m_TagString: Untagged
@@ -134,6 +135,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6817596581902027294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109729707008727459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb32dc7d18ac40e3beed84a633df6edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _miniGame: {fileID: 391278279777878491}
 --- !u!1 &4995918489973401008
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,6 +307,7 @@ GameObject:
   - component: {fileID: 6698433359057949313}
   - component: {fileID: 7768638064127178332}
   - component: {fileID: 4037576346163483985}
+  - component: {fileID: 5517687691109748942}
   m_Layer: 6
   m_Name: Run
   m_TagString: Untagged
@@ -416,6 +431,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5517687691109748942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5596294106768400581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb32dc7d18ac40e3beed84a633df6edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _miniGame: {fileID: 0}
 --- !u!1 &6944922350003996515
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,6 +546,7 @@ GameObject:
   - component: {fileID: 5316916213015728107}
   - component: {fileID: 4919284891157790673}
   - component: {fileID: 357337184571800868}
+  - component: {fileID: 2266471415350352326}
   m_Layer: 6
   m_Name: Press
   m_TagString: Untagged
@@ -641,6 +670,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2266471415350352326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7625021046725120411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb32dc7d18ac40e3beed84a633df6edb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _miniGame: {fileID: 0}
 --- !u!1 &7884235099057567972
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,6 +714,7 @@ Transform:
   m_Children:
   - {fileID: 1598642314455873267}
   - {fileID: 8361249342155969545}
+  - {fileID: 5977823370812773093}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2876823502404944912
@@ -740,4 +783,71 @@ Transform:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6841936676814289932, guid: 77c405bb6462d8c419e1d6b941ad2de5, type: 3}
   m_PrefabInstance: {fileID: 2876823502404944912}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4883298898719052675
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 784215120191531287}
+    m_Modifications:
+    - target: {fileID: 1238921828117135718, guid: c21ffb06f39464648ace44a16044c8c5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 599.87994
+      objectReference: {fileID: 0}
+    - target: {fileID: 1238921828117135718, guid: c21ffb06f39464648ace44a16044c8c5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1107.9392
+      objectReference: {fileID: 0}
+    - target: {fileID: 1238921828117135718, guid: c21ffb06f39464648ace44a16044c8c5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.4400864
+      objectReference: {fileID: 0}
+    - target: {fileID: 1238921828117135718, guid: c21ffb06f39464648ace44a16044c8c5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1238921828117135718, guid: c21ffb06f39464648ace44a16044c8c5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1238921828117135718, guid: c21ffb06f39464648ace44a16044c8c5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1238921828117135718, guid: c21ffb06f39464648ace44a16044c8c5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1238921828117135718, guid: c21ffb06f39464648ace44a16044c8c5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1238921828117135718, guid: c21ffb06f39464648ace44a16044c8c5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1238921828117135718, guid: c21ffb06f39464648ace44a16044c8c5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5092146194378396248, guid: c21ffb06f39464648ace44a16044c8c5, type: 3}
+      propertyPath: m_Name
+      value: BenchPressGame
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c21ffb06f39464648ace44a16044c8c5, type: 3}
+--- !u!1 &391278279777878491 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5092146194378396248, guid: c21ffb06f39464648ace44a16044c8c5, type: 3}
+  m_PrefabInstance: {fileID: 4883298898719052675}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5977823370812773093 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1238921828117135718, guid: c21ffb06f39464648ace44a16044c8c5, type: 3}
+  m_PrefabInstance: {fileID: 4883298898719052675}
   m_PrefabAsset: {fileID: 0}
