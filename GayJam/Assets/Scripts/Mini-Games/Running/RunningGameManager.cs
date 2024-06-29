@@ -1,47 +1,55 @@
 using System.Collections;
+using Player;
 using TMPro;
-using UnityEditor;
+using Unity.Cinemachine;
 using UnityEngine;
 
-public class RunningGameManager : MonoBehaviour
+namespace Mini_Games.Running
 {
-    [SerializeField] private TMP_Text _points;
-    [SerializeField] private GameObject _runningMiniGame;
-    [SerializeField] private RunningConfig _config;
-
-    private int _currentPoints = 0;
-
-    private void Update()
+    public class RunningGameManager : MonoBehaviour
     {
-        UpdatePoints();
-    }
+        [SerializeField] private TMP_Text _points;
+        [SerializeField] private GameObject _runningMiniGame;
+        [SerializeField] private RunningConfig _config;
+        [SerializeField] private PlayerMover _playerMover;
+        [SerializeField] private CinemachineCamera _camera;
+        [SerializeField] private CinemachinePositionComposer _cinemachinePosition;
 
-    public void AddPoints(int value) =>
-        _currentPoints += value;
+        private int _currentPoints = 0;
 
-    public void DecreasePoints(int value) =>
-        _currentPoints -= value;
+        private void Update()
+        {
+            UpdatePoints();
+        }
 
+        public void AddPoints(int value) =>
+            _currentPoints += value;
 
-    public void UpdatePoints()
-    {
-        _points.text = $"Ã”— ”À: {_currentPoints}";
-    }
+        public void DecreasePoints(int value) =>
+            _currentPoints -= value;
 
-    public void EndMiniGame()
-    {
-        Debug.Log($"Ã”— ”À: {_currentPoints}");
+        public void UpdatePoints()
+        {
+            _points.text = $"–ú—É—Å–∫—É–ª: {_currentPoints}";
+        }
 
-        StartCoroutine(EndMiniGameCoroutine());
-    }
+        public void EndMiniGame()
+        {
+            Debug.Log($"–ú—É—Å–∫—É–ª: {_currentPoints}");
 
-    private IEnumerator EndMiniGameCoroutine()
-    {
-        WaitForSeconds pause = new WaitForSeconds(_config.PauseAfterFinishing);
+            StartCoroutine(EndMiniGameCoroutine());
+        }
+
+        private IEnumerator EndMiniGameCoroutine()
+        {
+            WaitForSeconds pause = new WaitForSeconds(_config.PauseAfterFinishing);
         
-        yield return pause;
+            yield return pause;
 
-        _runningMiniGame.SetActive( false );
+            _runningMiniGame.SetActive(false);
+            _playerMover.gameObject.SetActive(true);
+            _camera.Follow = _playerMover.transform;
+            _cinemachinePosition.TargetOffset = Vector3.zero;
+        }
     }
-
 }

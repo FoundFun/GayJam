@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 5925753024677234305}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.7076512, y: 0.19281146, z: -9.9973}
+  m_LocalPosition: {x: -0.7076512, y: 0.19281146, z: -19.9973}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -248,11 +248,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 53086166976900033, guid: 1fa76f46b29412c49b902b06bcab70da, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.58
       objectReference: {fileID: 0}
     - target: {fileID: 53086166976900033, guid: 1fa76f46b29412c49b902b06bcab70da, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.56
       objectReference: {fileID: 0}
     - target: {fileID: 53086166976900033, guid: 1fa76f46b29412c49b902b06bcab70da, type: 3}
       propertyPath: m_LocalPosition.z
@@ -375,6 +375,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5280768203074056912, guid: 6b3dfa53ae3f9874db661d7f3b8b74ef, type: 3}
+      propertyPath: _playerMover
+      value: 
+      objectReference: {fileID: 2380442321238110563}
     - target: {fileID: 7884235099057567972, guid: 6b3dfa53ae3f9874db661d7f3b8b74ef, type: 3}
       propertyPath: m_Name
       value: Gym

@@ -183,6 +183,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -27.265503
       objectReference: {fileID: 0}
+    - target: {fileID: 3537861298015522367, guid: cb2848009d2cba1459a9894997d5f43e, type: 3}
+      propertyPath: m_LayerOverridePriority
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3752791906367295457, guid: cb2848009d2cba1459a9894997d5f43e, type: 3}
     m_RemovedGameObjects:
