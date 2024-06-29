@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: cb1b2a31e19507248931ff40801e2f22
+guid: 0a2f1d9d7fbde8c408e10993af2c12b3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4268314051791992784
-    second: photo_2024-06-28_23-40-43_0
+      213: -359975163627363241
+    second: GymJam_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -84,7 +84,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Standalone
+    buildTarget: Win64
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -98,6 +98,19 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -139,13 +152,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: photo_2024-06-28_23-40-43_0
+      name: GymJam_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 984
-        height: 554
+        width: 2269
+        height: 1528
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +167,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 03841210cf6e3c4c0800000000000000
-      internalID: -4268314051791992784
+      spriteID: 7542704fe7c110bf0800000000000000
+      internalID: -359975163627363241
       vertices: []
       indices: 
       edges: []
@@ -173,8 +186,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      photo_2024-06-28_23-40-43_0: -4268314051791992784
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
