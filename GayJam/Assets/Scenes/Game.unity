@@ -126,6 +126,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2873364122904146069, guid: 9f96b54841a40f54ebed73fcc6953021, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4225548221709686221, guid: 9f96b54841a40f54ebed73fcc6953021, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.087651305
@@ -164,6 +168,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4225548221709686221, guid: 9f96b54841a40f54ebed73fcc6953021, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6831300727846516835, guid: 9f96b54841a40f54ebed73fcc6953021, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6984591847279513925, guid: 9f96b54841a40f54ebed73fcc6953021, type: 3}
