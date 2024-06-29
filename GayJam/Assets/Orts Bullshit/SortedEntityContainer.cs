@@ -2,5 +2,5 @@ using UnityEngine;
 
 public class SortedEntityContainer : MonoBehaviour
 {
-    [HideInInspector] public Entity currentEntity;
+    [HideInInspector] public PressEntity currentEntity;
 }
