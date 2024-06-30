@@ -190,6 +190,7 @@ namespace Mini_Games.Press
             Score.PressScore = 0;
             PlayerPrefs.Save();
             _remainingTime = 0;
+            _targetSpawned = 0;
             _isStopGame = false;
         }
         
