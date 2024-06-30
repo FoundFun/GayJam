@@ -3,13 +3,15 @@ using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour
 {
+    [SerializeField] private int levelIndex;
+
     public void ExitGame()
     {
         Application.Quit();
     }
 
-    public void LoadGame()
+    public void LoadLevel()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(levelIndex);
     }
 }

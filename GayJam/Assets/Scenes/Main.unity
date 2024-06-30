@@ -419,6 +419,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1647763457653173039, guid: ffd2c985c4573c0469166b20c8017c63, type: 3}
+      propertyPath: levelIndex
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1771845275709633575, guid: ffd2c985c4573c0469166b20c8017c63, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -726,6 +730,14 @@ PrefabInstance:
     - target: {fileID: 7690496117301326747, guid: ffd2c985c4573c0469166b20c8017c63, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7990137015401063574, guid: ffd2c985c4573c0469166b20c8017c63, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7990137015401063574, guid: ffd2c985c4573c0469166b20c8017c63, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Level, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8088244992950496332, guid: ffd2c985c4573c0469166b20c8017c63, type: 3}
       propertyPath: m_AnchorMax.x
