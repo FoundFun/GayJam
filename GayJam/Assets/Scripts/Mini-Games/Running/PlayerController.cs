@@ -13,6 +13,7 @@ namespace Mini_Games.Running
         private float _speed;
         private float _speedIncreaseRate;
         private float _jumpForce;
+        private float _timerJump;
 
         private Rigidbody2D _rigidbody;
         private Collider2D _collider;
@@ -60,7 +61,17 @@ namespace Mini_Games.Running
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Space) & _isGrounded)
+            {
                 Jump();
+                _timerJump = 0;
+            }
+
+            if (!_isGrounded && _timerJump > 0.3f)
+            {
+                _rigidbody.velocity = new Vector2(_rigidbody.velocityX, _rigidbody.velocityY - 0.1f);
+            }
+
+            _timerJump += Time.deltaTime;
         }
 
         private void FixedUpdate()

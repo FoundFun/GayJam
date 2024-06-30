@@ -7,6 +7,7 @@ namespace Player
     {
         [SerializeField] private PlayerConfig _playerConfig;
         [SerializeField] private Rigidbody2D _rigidbody2D;
+        [SerializeField] private SpriteRenderer _spriteRenderer;
         
         private InputSystem_Actions _inputSystemActions;
         private Vector2 _direction;
@@ -29,6 +30,16 @@ namespace Player
         private void Update()
         {
             _direction = _inputSystemActions.Player.Move.ReadValue<Vector2>();
+            
+            if (_direction.x < 0)
+            {
+                _spriteRenderer.flipX = false;
+            }
+
+            if (_direction.x > 0)
+            {
+                _spriteRenderer.flipX = true;
+            }
         }
 
         private void FixedUpdate()

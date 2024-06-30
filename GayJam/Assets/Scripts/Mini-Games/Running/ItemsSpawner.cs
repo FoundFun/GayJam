@@ -5,6 +5,7 @@ public class ItemsSpawner : MonoBehaviour
     [SerializeField] private RunningConfig config;
     [SerializeField] private BoxCollider2D _spawnZone;
     [SerializeField] private GameObject[] _items;
+    [SerializeField] private Transform _container;
 
     private int _amountOfItems = 10;
     private float _spawnHeight = 0f;
@@ -28,7 +29,7 @@ public class ItemsSpawner : MonoBehaviour
         int index = Random.Range(0, _items.Length);
 
         Vector3 spawnPosition = GetNonOverlappingPositionInZone();
-        Instantiate(_items[index], spawnPosition, Quaternion.identity);
+        Instantiate(_items[index], spawnPosition, Quaternion.identity, _container);
     }
 
     Vector3 GetNonOverlappingPositionInZone()
