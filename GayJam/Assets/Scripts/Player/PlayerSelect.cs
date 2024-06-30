@@ -38,6 +38,10 @@ namespace Player
                 {
                     miniGame.StartMiniGame();
                 }
+                if(overlapCircle.gameObject.TryGetComponent(out Door door))
+                {
+                    door.Enter();
+                }
             }
         }
     }
