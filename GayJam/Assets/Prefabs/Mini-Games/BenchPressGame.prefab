@@ -2525,7 +2525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pointText: {fileID: 9068426240264353788}
   _approach: {fileID: 4661490574537727916}
-  _config: {fileID: 0}
+  _config: {fileID: 11400000, guid: 7e6c765c8acba714684cd5720db287ee, type: 2}
   _playerMover: {fileID: 0}
   _bars:
   - {fileID: 8195360235156699154}

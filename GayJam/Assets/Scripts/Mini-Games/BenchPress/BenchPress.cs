@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using GlobalComponents;
-using Mini_Games.PullUp;
 using Player;
 using TMPro;
 using UnityEngine;
@@ -12,7 +11,7 @@ namespace Mini_Games.BenchPress
     {
         [SerializeField] private TMP_Text _pointText;
         [SerializeField] private TMP_Text _approach;
-        [SerializeField] private PullUpConfig _config;
+        [SerializeField] private BenchPressConfig _config;
         [SerializeField] private PlayerMover _playerMover;
         [SerializeField] private List<BenchPressBar> _bars;
 
@@ -20,6 +19,13 @@ namespace Mini_Games.BenchPress
 
         private void OnEnable()
         {
+            Reset();
+            
+            _playerMover.gameObject.SetActive(false);
+            
+            _approach.text = $"Подход: {_count}/5";
+            _pointText.text = $"Мускул: {Score.BenchPressScore}";
+            
             foreach (BenchPressBar bar in _bars)
             {
                 bar.NextBar += OnNextBar;
@@ -40,6 +46,8 @@ namespace Mini_Games.BenchPress
             {
                 bar.NextBar -= OnNextBar;
             }
+            
+            _playerMover.gameObject.SetActive(true);
         }
 
         private void OnNextBar()
@@ -63,10 +71,11 @@ namespace Mini_Games.BenchPress
             }
             else
             {
-                //todo result
                 StartCoroutine(EndMiniGame());
             }
-            
+
+            _approach.text = $"Подход: {_count}/5";
+            _pointText.text = $"Мускул: {Score.BenchPressScore}";
         }
         
         private void Reset()

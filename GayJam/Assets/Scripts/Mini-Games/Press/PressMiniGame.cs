@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +13,7 @@ namespace Mini_Games.Press
     {
         [SerializeField] private PlayerMover _player;
         [SerializeField] private PressConfig _config;
+        [SerializeField] private int _startTimerFromSpawn;
         [SerializeField] private TMP_Text _timer;
         [SerializeField] private TMP_Text _points;
         [SerializeField] private int _correctTip;
@@ -32,6 +32,7 @@ namespace Mini_Games.Press
         private bool _sortKeyPressed;
         private float _remainingTime;
         private bool _isStopGame;
+        private int _targetSpawned;
 
         private void Awake()
         {
@@ -107,7 +108,8 @@ namespace Mini_Games.Press
 
         private void Update()
         {
-            _remainingTime -= Time.deltaTime;
+            if (_targetSpawned >= _startTimerFromSpawn)
+                _remainingTime -= Time.deltaTime;
 
             UpdateRemainingTime();
 
@@ -146,6 +148,7 @@ namespace Mini_Games.Press
             }
 
             Spawn();
+            _targetSpawned++;
         }
 
         private void MoveLeft(InputAction.CallbackContext obj)
@@ -179,6 +182,7 @@ namespace Mini_Games.Press
             }
 
             Spawn();
+            _targetSpawned++;
         }
     
         private void Reset()

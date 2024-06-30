@@ -54,6 +54,7 @@ namespace Mini_Games.BenchPress
                 if (overlapBox.TryGetComponent(out BarType barType))
                 {
                     Score.BenchPressScore += barType.Score;
+                    PlayerPrefs.Save();
                     OnDisable();
                     NextBar?.Invoke();
                     Debug.Log(barType.Score);

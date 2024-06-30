@@ -12,6 +12,7 @@ namespace Mini_Games.Running
         [SerializeField] private GameObject _runningMiniGame;
         [SerializeField] private RunningConfig _config;
         [SerializeField] private PlayerMover _playerMover;
+        [SerializeField] private GameObject _cameraFollow;
         [SerializeField] private CinemachineCamera _camera;
         [SerializeField] private CinemachinePositionComposer _cinemachinePosition;
 
@@ -48,7 +49,7 @@ namespace Mini_Games.Running
 
             _runningMiniGame.SetActive(false);
             _playerMover.gameObject.SetActive(true);
-            _camera.Follow = _playerMover.transform;
+            _camera.Follow = _cameraFollow.transform;
             _cinemachinePosition.TargetOffset = Vector3.zero;
         }
     }
